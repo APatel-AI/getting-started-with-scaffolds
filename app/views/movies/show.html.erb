@@ -59,7 +59,6 @@
 
 <hr>
 
-
 <div>
   <div>
     <h2>
@@ -68,12 +67,11 @@
 
     <form action="/movies/<%= @the_movie.id %>"  method="post" data-turbo="false">
 
-    <input type="text" value= "<%= form_authenticity_token %>" name="authenticity_token">
+      <input type="text" value= "<%= form_authenticity_token %>" name="authenticity_token">
 
-    <input type="text" name="_method" value="patch">
+      <input type="text" name="_method" value="patch">
 
-
-    <input type="text" name>
+      <input type="text" name>
       <div>
         <label for="title_box">
           Title
@@ -94,7 +92,7 @@
         <input type="checkbox" id="released_box" name="query_released" value="1" <%= "checked" if @the_movie.released %>>
 
         <label for="released_box">
-            Released
+          Released
         </label>
       </div>
 
