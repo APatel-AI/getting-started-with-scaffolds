@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1 or /books/1.json
-  dgef show
+  def show
   end
 
   # GET /books/new
@@ -67,4 +67,4 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :description, :released)
     end
-end
+  end

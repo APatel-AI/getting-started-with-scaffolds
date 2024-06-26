@@ -1,4 +1,15 @@
 class MoviesController < ApplicationController
+
+  def new
+    render template:"movies/new"
+    
+  end
+
+  def edit
+    @the_movie = Movie.where(id: params.fetch(:id)).first
+    render template: "movies/edit"
+  end
+
   def index
     matching_movies = Movie.all
 
@@ -26,8 +37,9 @@ class MoviesController < ApplicationController
     if the_movie.valid?
       the_movie.save
       redirect_to("/movies", { :notice => "Movie created successfully." })
+
     else
-      redirect_to("/movies", { :alert => the_movie.errors.full_messages.to_sentence })
+      redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
     end
   end
 
